@@ -1,0 +1,3 @@
+[submodule "Seeed_Arduino_MY9221"]
+	path = Seeed_Arduino_MY9221
+	url = https://github.com/Seeed-Studio/Grove_LED_Bar

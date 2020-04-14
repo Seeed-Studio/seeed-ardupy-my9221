@@ -9,7 +9,10 @@ You can get more information in here [Grove_LED_Bar](https://github.com/Seeed-St
 
 ![da](https://raw.githubusercontent.com/Seeed-Studio/Grove_LED_Bar/master/Grove_LED_Bar.gif)
 
+
 ## Usage
+
+
 
 ```
 from arduino import grove_led_bar
@@ -28,7 +31,7 @@ while True:
 
 | API | Parameter |Function|Usage|
 | ----| ----|----|----|
-|**set_bist**|*value\<int\>*| Turn on the corresponding No of LED | set_bits(0x000F)|
+|**set_bits**|*value\<int\>*| Turn on the corresponding No of LED | set_bits(0x000F)|
 |**get_bits**|*null*| Get current state | get_bits()|
 |**set_level**|*level\<float\>*|Walk through the levels|set_level(5)|
 |**set_brightness**|*No\<int\>*, *level\<brightness\>*|Set brightness of the corresponding No LED|set_brightness(1, 50)|

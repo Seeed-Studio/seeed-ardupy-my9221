@@ -1,4 +1,4 @@
-# Seeed ArduPy MY9221
+# Seeed ArduPy MY9221 [![Build Status](https://api.travis-ci.com/Seeed-Studio/seeed-ardupy-my9221.svg?branch=master)](https://travis-ci.com/github/Seeed-Studio/seeed-ardupy-my9221)
 
 ## Introduction
 Seeed ArduPy MY9221 is a Arduino libraies binding for ArduPy.
@@ -9,10 +9,20 @@ You can get more information in here [Grove_LED_Bar](https://github.com/Seeed-St
 
 ![da](https://raw.githubusercontent.com/Seeed-Studio/Grove_LED_Bar/master/Grove_LED_Bar.gif)
 
+## How to binding with ArduPy
+- Install [AIP](https://github.com/Seeed-Studio/ardupy-aip)
+- Build firmware with Seeed ArduPy MY9221
+```
+    aip install Seeed-Studio/seeed-ardupy-my9221
+    aip build
+```
+- Flash new firmware to you ArduPy board
+```
+    aip flash <path of the new firmware>
+```
+For more examples of using AIP, please refer to [AIP](https://github.com/Seeed-Studio/ardupy-aip).
 
 ## Usage
-
-
 
 ```
 from arduino import grove_led_bar
@@ -29,13 +39,40 @@ while True:
 
 ## API Reference
 
-| API | Parameter |Function|Usage|
-| ----| ----|----|----|
-|**set_bits**|*value\<int\>*| Turn on the corresponding No of LED | set_bits(0x000F)|
-|**get_bits**|*null*| Get current state | get_bits()|
-|**set_level**|*level\<float\>*|Walk through the levels|set_level(5)|
-|**set_brightness**|*No\<int\>*, *level\<brightness\>*|Set brightness of the corresponding No LED|set_brightness(1, 50)|
-|**toggle**|*No\<int\>*|Toggle the corresponding No of LED|toggle(5)|
+- **set_bits(*value\<int\>*)**
+
+    Turn on the corresponding No of LED.
+    ```
+    set_bits(0b000000000000101) # Turn on LEDs 1 and 3
+    set_bits(0x155); # Turn on LEDs 1, 3, 5, 7, 9
+    ```
+
+- **get_bits(*null*)**
+
+    Get current LED bar state.
+    ```
+    get_bits()
+    ```
+
+- **set_level(*level\<float\>*)**
+
+    Walk through the levels
+    ```
+    set_level(5)
+    ```
+- **set_brightness(*No\<int\>, brightness\<float\>*)**
+
+    Set brightness of the corresponding No LED.
+    ```
+    set_brightness(1, 50) # Set Led No. 1 brightness to 50
+    ```
+- **set_brightness(*No\<int\>, brightness\<float\>*)**
+
+    Toggle the corresponding No of LED.
+    ```
+    toggle(5) # Toggle the LEDs 1.
+    ```
+
 
 ----
 

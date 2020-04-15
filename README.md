@@ -12,19 +12,19 @@ You can get more information in here [Grove_LED_Bar](https://github.com/Seeed-St
 ## How to binding with ArduPy
 - Install [AIP](https://github.com/Seeed-Studio/ardupy-aip)
 - Build firmware with Seeed ArduPy MY9221
-```
-    aip install Seeed-Studio/seeed-ardupy-my9221
-    aip build
+```shell
+aip install Seeed-Studio/seeed-ardupy-my9221
+aip build
 ```
 - Flash new firmware to you ArduPy board
-```
-    aip flash <path of the new firmware>
+```shell
+aip flash
 ```
 For more examples of using AIP, please refer to [AIP](https://github.com/Seeed-Studio/ardupy-aip).
 
 ## Usage
 
-```
+```python
 from arduino import grove_led_bar
 import time
 
@@ -34,44 +34,34 @@ i = 0
 while True:
     i = i + 1
     led_bar.set_bits(i)
-    time.sleep(0.05)
+    time.sleep(1)
 ```
 
 ## API Reference
 
-- **set_bits(*value\<int\>*)**
+- **set_bits(*value\<int\>*)** : Turn on the corresponding No of LED.
+```python
+set_bits(0b000000000000101) # Turn on LEDs 1 and 3
+set_bits(0x155); # Turn on LEDs 1, 3, 5, 7, 9
+```
 
-    Turn on the corresponding No of LED.
-    ```
-    set_bits(0b000000000000101) # Turn on LEDs 1 and 3
-    set_bits(0x155); # Turn on LEDs 1, 3, 5, 7, 9
-    ```
+- **get_bits(*null*)** : Get current LED bar state.
+```python
+get_bits()
+```
 
-- **get_bits(*null*)**
-
-    Get current LED bar state.
-    ```
-    get_bits()
-    ```
-
-- **set_level(*level\<float\>*)**
-
-    Walk through the levels
-    ```
-    set_level(5)
-    ```
-- **set_brightness(*No\<int\>, brightness\<float\>*)**
-
-    Set brightness of the corresponding No LED.
-    ```
-    set_brightness(1, 50) # Set Led No. 1 brightness to 50
-    ```
-- **set_brightness(*No\<int\>, brightness\<float\>*)**
-
-    Toggle the corresponding No of LED.
-    ```
-    toggle(5) # Toggle the LEDs 1.
-    ```
+- **set_level(*level\<float\>*)** : Walk through the levels
+```python
+set_level(5)
+```
+- **set_brightness(*No\<int\>, brightness\<float\>*)** : Set brightness of the corresponding No LED.
+```python
+set_brightness(1, 50) # Set Led No. 1 brightness to 50
+```
+- **set_brightness(*No\<int\>, brightness\<float\>*)** : Toggle the corresponding No of LED.
+```python
+toggle(5) # Toggle the LEDs 1.
+```
 
 
 ----

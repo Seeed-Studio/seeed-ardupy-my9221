@@ -4,5 +4,9 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/Seeed-Studio/seeed-ardupy-my9221.git"
-    }
+    },
+    "dependencies": [{
+        "name": "Seeed_Arduino_MY9221",
+        "url": "https://github.com/Seeed-Studio/Grove_LED_Bar.git"
+    }]
 }
